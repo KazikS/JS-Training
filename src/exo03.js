@@ -3,5 +3,15 @@
 // { a: "b" } => { b: "a" }
 
 export function invertKeysAndValues(obj) {
-  return obj;
+  let keysArray = [];
+  let valuesArray = [];
+  let invertedObj = {};
+  for (let key in obj) { 
+    keysArray.push(key);
+    valuesArray.push(obj[key]);
+  }
+  for(let i = 0; i < valuesArray.length; i++) { 
+    invertedObj[valuesArray[i]] = keysArray[i];
+  }
+  return invertedObj; 
 }

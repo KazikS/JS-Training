@@ -8,13 +8,13 @@ const lyrics = [
 export const instructions = [];
 
 // TOFIX: print the song lyrics correctly
-for (var i = 0; i < lyrics.length; i++) {
+for (let i = 0; i < lyrics.length; i++) {
   instructions.push(function printNextLine() {
     return "Because I'm happy ! " + lyrics[i]
   });
 }
 
 // try to run this code to see the problem in the console
-/*instructions.forEach(function (printNextLine) {
+instructions.forEach(function (printNextLine) {
   console.log(printNextLine());
-});*/
+});

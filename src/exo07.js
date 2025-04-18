@@ -12,15 +12,21 @@ const products = [
 
 export function getProductNames(products) {
   // return the list of product names
-  return [];
+  let res = [];
+  products.forEach(element => {
+    res.push(element.name);
+  });
+  return res;
 }
 
 export function getFruits(products) {
   // return only the fruits
-  return [];
+  return products.filter((value, index) => value.type == "fruit");
 }
 
 export function calcTotalPrice(products) {
   // return total price of all products (unitPrice * quantity)
-  return 0;
+  let totalPrice = products.reduce((sum, current) => sum + (current.quantity * current.unitPrice), 0);
+  console.log(totalPrice)
+  return totalPrice;
 }
